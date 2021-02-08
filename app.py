@@ -25,6 +25,37 @@ def check_if_game_over():
 
 
 def checkIfWin():
+
+    global winner
+
+    rowWinner = checkRows()
+    columnWinner = checkColumns()
+    diagonalWinner = checkDiagonals()
+
+    if rowWinner:
+        # win
+        winner = rowWinner
+    elif columnWinner:
+        # win
+
+        winner = columnWinner
+    elif diagonalWinner:
+        # ein
+        winner = diagonalWinner
+    else:
+        winner = None
+    return
+
+
+def checkRows():
+    return
+
+
+def checkColumns():
+    return
+
+
+def checkDiagonals():
     return
 
 
