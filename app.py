@@ -65,6 +65,19 @@ def checkRows():
 
 
 def checkColumns():
+    global game_still_going
+
+    column1 = board[0] == board[3] == board[6] != "-"
+    column2 = board[1] == board[4] == board[7] != "-"
+    column3 = board[2] == board[5] == board[8] != "-"
+    if column1 or column2 or column3:
+        game_still_going = False
+    if column1:
+        return board[0]
+    elif column1:
+        return board[1]
+    elif column1:
+        return board[2]
     return
 
 
