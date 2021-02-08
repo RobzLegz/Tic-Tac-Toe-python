@@ -48,6 +48,19 @@ def checkIfWin():
 
 
 def checkRows():
+    global game_still_going
+
+    row1 = board[0] == board[1] == board[2] != "-"
+    row2 = board[3] == board[4] == board[5] != "-"
+    row3 = board[6] == board[7] == board[8] != "-"
+    if row1 or row2 or row3:
+        game_still_going = False
+    if row1:
+        return board[0]
+    elif row1:
+        return board[3]
+    elif row1:
+        return board[6]
     return
 
 
