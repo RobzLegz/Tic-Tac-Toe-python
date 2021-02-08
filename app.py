@@ -15,7 +15,7 @@ def display_board():
 def handle_turn(current_player):
     position = input("Choose a position from 1 to 9:")
     position = int(position) - 1
-    board[position] = "X"
+    board[position] = current_player
     display_board()
 
 
@@ -37,7 +37,6 @@ def checkIfWin():
         winner = rowWinner
     elif columnWinner:
         # win
-
         winner = columnWinner
     elif diagonalWinner:
         # ein
@@ -86,11 +85,12 @@ def checkDiagonals():
 
     diagonal1 = board[0] == board[4] == board[8] != "-"
     diagonal2 = board[6] == board[4] == board[2] != "-"
+
     if diagonal1 or diagonal2:
         game_still_going = False
     if diagonal1:
         return board[0]
-    elif diagonal1:
+    elif diagonal2:
         return board[6]
     return
 
@@ -100,7 +100,12 @@ def checkIfTie():
 
 
 def flip_player():
-    return
+    global current_player
+
+    if current_player == "X":
+        current_player = "O"
+    elif current_player == "O":
+        current_player = "X"
 
 
 def play_game():
