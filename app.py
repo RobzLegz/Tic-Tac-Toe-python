@@ -84,16 +84,14 @@ def checkColumns():
 def checkDiagonals():
     global game_still_going
 
-    column1 = board[0] == board[3] == board[6] != "-"
-    column2 = board[1] == board[4] == board[7] != "-"
-    if column1 or column2 or column3:
+    diagonal1 = board[0] == board[4] == board[8] != "-"
+    diagonal2 = board[6] == board[4] == board[2] != "-"
+    if diagonal1 or diagonal2:
         game_still_going = False
-    if column1:
+    if diagonal1:
         return board[0]
-    elif column1:
-        return board[1]
-    elif column1:
-        return board[2]
+    elif diagonal1:
+        return board[6]
     return
 
 
