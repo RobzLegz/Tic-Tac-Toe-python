@@ -15,8 +15,8 @@ def display_board():
 def handle_turn(current_player):
     print(current_player + "'s turn.")
     position = input("Choose a position from 1 to 9:")
-    if position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-        position = input("Ivalid input! Choose a position from 1 to 9:")
+    while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+        position = input("Choose a position from 1 to 9:")
     position = int(position) - 1
     board[position] = current_player
     display_board()
