@@ -96,7 +96,10 @@ def checkDiagonals():
 
 
 def checkIfTie():
-    return
+    global game_still_going
+
+    if "-" not in board:
+        game_still_going = False
 
 
 def flip_player():
