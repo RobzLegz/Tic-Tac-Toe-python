@@ -57,9 +57,9 @@ def checkRows():
         game_still_going = False
     if row1:
         return board[0]
-    elif row1:
+    elif row2:
         return board[3]
-    elif row1:
+    elif row3:
         return board[6]
     return
 
@@ -74,14 +74,26 @@ def checkColumns():
         game_still_going = False
     if column1:
         return board[0]
-    elif column1:
+    elif column2:
         return board[1]
-    elif column1:
+    elif column3:
         return board[2]
     return
 
 
 def checkDiagonals():
+    global game_still_going
+
+    column1 = board[0] == board[3] == board[6] != "-"
+    column2 = board[1] == board[4] == board[7] != "-"
+    if column1 or column2 or column3:
+        game_still_going = False
+    if column1:
+        return board[0]
+    elif column1:
+        return board[1]
+    elif column1:
+        return board[2]
     return
 
 
